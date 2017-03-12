@@ -12,8 +12,7 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
-import com.libers.unnc.liber.R;
-import com.libers.unnc.liber.model.bean.Book;
+import com.libers.unnc.liber.model.bean.State;
 import com.libers.unnc.liber.model.bean.User;
 import com.mikepenz.google_material_typeface_library.GoogleMaterial;
 import com.mikepenz.iconics.IconicsDrawable;
@@ -21,16 +20,22 @@ import com.mikepenz.iconics.IconicsDrawable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.libers.unnc.liber.R;
+import com.libers.unnc.liber.model.bean.Book;
+
+import org.litepal.crud.DataSupport;
+
 /**
- * Created by zengye on 3/4/17.
+ * Created by a11 on 17/2/28.
  */
 
-public class MyBookGridAdapter extends BaseAdapter {
+public class MyBookAdapter extends BaseAdapter {
+
     private List<Book> list;
     private LayoutInflater inflater;
     Context context;
 
-    public MyBookGridAdapter(Context context) {
+    public MyBookAdapter(Context context) {
         this.context = context;
         list = new ArrayList<>();
         inflater = LayoutInflater.from(context);
@@ -55,22 +60,27 @@ public class MyBookGridAdapter extends BaseAdapter {
         return list.get(position).getId();
     }
 
+
+    public String getItemISBN(int position) {
+        return list.get(position).getIsbn13();
+    }
+
     @Override
     public View getView(final int position, View convertView, ViewGroup parent) {
-        MyBookGridViewHolder viewHolder;
+        MyBookViewHolder viewHolder;
         if (convertView == null) {
-            viewHolder = new MyBookGridViewHolder();
+            viewHolder = new MyBookViewHolder();
             convertView = inflater.inflate(R.layout.fragment_my_book_item, null);
             viewHolder.ivCover = (ImageView) convertView.findViewById(R.id.iv_cover);
             viewHolder.tvTitle = (TextView) convertView.findViewById(R.id.tv_title);
-            viewHolder.dueTime = (TextView) convertView.findViewById(R.id.duetime);
-
+            viewHolder.tvduetime = (TextView) convertView.findViewById(R.id.tv_duetime);
             convertView.setTag(viewHolder);
         }
 
-        viewHolder = (MyBookGridViewHolder) convertView.getTag();
+        viewHolder = (MyBookViewHolder) convertView.getTag();
         Book bean = list.get(position);
-        //User  user = ;
+
+
         // 设置图片
         Glide.with(viewHolder.ivCover.getContext())
                 .load(bean.getImage())
@@ -81,18 +91,21 @@ public class MyBookGridAdapter extends BaseAdapter {
 
         // 设置其他
         viewHolder.tvTitle.setText(bean.getTitle());
-        //设置 duetime
+//        viewHolder.rbRate.setRating((Float.parseFloat(bean.getAverage())/2));
 
+        String username = DataSupport.findLast(State.class).getUsername();
+        String isbn = bean.getIsbn13();
+        List<User> usersdata = DataSupport.where("username = ? and isbn13 = ?",username,isbn).find(User.class);
+        String duetime = usersdata.get(0).getDueTime();
 
-
+        viewHolder.tvduetime.setText("Due time: "+ duetime);
 
         return convertView;
     }
 }
 
-class MyBookGridViewHolder {
+class MyBookViewHolder {
     public ImageView ivCover;
     public TextView tvTitle;
-    public TextView dueTime;
+    public TextView tvduetime;
 }
-

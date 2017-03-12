@@ -19,7 +19,6 @@ import org.litepal.crud.DataSupport;
 import java.util.List;
 
 import com.libers.unnc.liber.R;
-import com.libers.unnc.liber.fragments.MyBookFragment;
 import com.libers.unnc.liber.model.bean.State;
 import com.libers.unnc.liber.model.bean.User;
 
@@ -27,7 +26,6 @@ public class LoginActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        MainActivity.change_state = 0;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
@@ -49,24 +47,17 @@ public class LoginActivity extends AppCompatActivity {
                 }else{
                     String rigntPW = users.get(0).getPassword();
                     if(passW.equals(rigntPW)){
-                        Toast.makeText(LoginActivity.this, "Login successful!!", Toast.LENGTH_SHORT).show();
-                        MainActivity.textViewObj.setText("     Logout");
-                        State NewState = DataSupport.findLast(State.class);
+                        Toast.makeText(LoginActivity.this, "Login successfull!!", Toast.LENGTH_SHORT).show();
+                        State NewState = new State();
                         NewState.setState(1);
                         NewState.setUsername(name);
                         NewState.save();
 
-//
-//                        Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-//                        //intent.putExtra("id", 1);
-//                        //intent.setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-//
-//                        startActivity(intent);
                         finish();
-
-
                     }
+
                 }
+
 
             }
         });
