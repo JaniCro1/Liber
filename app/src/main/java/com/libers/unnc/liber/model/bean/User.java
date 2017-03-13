@@ -42,4 +42,5 @@ public class User extends DataSupport implements Serializable{
     public String getBowrrowTime(){return bowrrowTime;}
     public void setBowrrowTime(String bowrrowTime){ this.bowrrowTime = bowrrowTime;}
 
+
 }
