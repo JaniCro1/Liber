@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Liber</string>
+
+    <string name="navigation_drawer_open">Open menu</string>
+    <string name="navigation_drawer_close">Close menu</string>
+
+    <string name="action_settings">Setting</string>
+    <string name="menu_favorite">Like</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_browser">Open with browser</string>
+    <string name="menu_more">Menu</string>
+
+    <string name="note_edit_hint">Your note</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_book_info_add">BookInfoAddActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+</resources>

@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.mikepenz/google-material-typeface/2.2.0.1.original/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="53e176889382956e3910232309ab7056730553e8">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-google-material-typeface-2.2.0.1.original_0aa2a448f6a79cbf1b76462d80e304101ff05ace/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.mikepenz/iconics-core/2.5.11/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="98a135c7935e62ac041acc1fcb148973bde828d5">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.mikepenz-iconics-core-2.5.11_00c967aacb21661cce58ee42d5f1fcd2cee41310/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/libs/internal_impl-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/internal_impl-23.3.0_af7c107c80d032b14bfcc7affc63faeb885921e3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/.gradle/caches/modules-2/files-2.1/com.nineoldandroids/library/2.4.0/e9b63380f3a242dbdbf103a2355ad7e43bad17cb/library-2.4.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/library-2.4.0_21f3d895e13741e85c4b4b8bd6a81b4b733c2d1f/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/.gradle/caches/modules-2/files-2.1/com.github.bumptech.glide/glide/3.7.0/9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4/glide-3.7.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/glide-3.7.0_fbf5f74f11e78e711ea3c811dfd1589bacb56d11/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/.gradle/caches/modules-2/files-2.1/jp.co.cyberagent.android.gpuimage/gpuimage-library/1.3.0/e2e1ca1fbb73283fbc84a0d0b0e3e982d288c658/gpuimage-library-1.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="e2e1ca1fbb73283fbc84a0d0b0e3e982d288c658">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/gpuimage-library-1.3.0_782b46ddc29fa7929218998c7820ee1807a0015b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/support-v4/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-v4-23.3.0_04730a8b53d2bb1adc8512c0942ed787528ec5ee/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/cardview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="82ce13fd19cdfde0e392f03c27edeba8d4333648">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-cardview-v7-23.3.0_70f34f38a23dcf4d2b36328860ca1c0d2adf473b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/23.3.0/support-annotations-23.3.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/support-annotations-23.3.0_347068870f52cfaa1541e0fe162857e59bbc44fa/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.wang.avi/library/1.0.5/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="5035aaf60d244038bb143ffad4fbb7cba92ecdc7">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.wang.avi-library-1.0.5_be4192ede1ddcd1453284401ab52fd22ae97e5ca/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/core/1.8.4/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="af8d42f1f020e936b8cd9f5cb6c75993194895a3">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/me.dm7.barcodescanner-core-1.8.4_86e6da0de5f6b64a4ac0e60127b915ecbaff0da5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-support-vector-drawable-23.3.0_ea4cc8525b5ff7a832d01c7a480bc560fe1a003b/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/jp.wasabeef/blurry/2.0.2/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="cd543c999ebba98f3dc998fcb3cc8b6077dd6abb">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/jp.wasabeef-blurry-2.0.2_de80037054134df2dcfe8f59c7d8b06d77bbcf74/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.volley/volley/1.0.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2cd4b982617e544728de0782d718a58ce1b06e3f">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.volley-volley-1.0.0_f33fea80f9b9c26c21d11fef8c36cdb60c43af92/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/org.litepal.android/core/1.3.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="148cce49c37bc1db5f004549ec6bf8308731d0ec">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/org.litepal.android-core-1.3.1_eb148021745b430c64f2e6c9ad6a3c2c915ca2c5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/cn.pedant.sweetalert/library/1.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="0c3529d9491be892952749d252ae1defa9b1f937">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/cn.pedant.sweetalert-library-1.3_8a99cddfc832b3ca5c9c54adca964cbf553107b5/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/jp.wasabeef/glide-transformations/2.0.1/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="df451c6f391e3e32022fc964ed87bd57a5869128">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/jp.wasabeef-glide-transformations-2.0.1_f9d3e7cab50b08160cea62e0f32bd08aeaeecccc/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/.gradle/caches/modules-2/files-2.1/com.google.zxing/core/3.2.1/2287494d4f5f9f3a9a2bb6980e3f32053721b315/core-3.2.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="2287494d4f5f9f3a9a2bb6980e3f32053721b315">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/core-3.2.1_627203d2c6941f1c756993079629e176ac7d67c7/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-appcompat-v7-23.3.0_8b77aea1d8de66a7c01f40ec046c65c6ad281db3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/me.dm7.barcodescanner/zxing/1.8.4/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="68ef1daf85c69fca8fddf7bbb947fc51cc9f8ca3">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/me.dm7.barcodescanner-zxing-1.8.4_b78570d48938e2f7fb6d78433bcaf35ef244dc8a/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-animated-vector-drawable-23.3.0_461f1d48edbd407558b14352d0e9e3efd99b6fef/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.github.clans/fab/1.6.3/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="8f65e6101c990702ad4178f592291354eb0cf2c7">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.github.clans-fab-1.6.3_c4089c7894957ac433968a31844aa53aa7570192/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-recyclerview-v7-23.3.0_89a7f5ebcc3b94f48dbfeff67a8a8129194d3bec/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="d92705016891ee0897d6d57bfe18ac4975abb0b5">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_65fd13c62d789ec985ba3ae48d5f2ca75688bbe6/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.pnikosis/materialish-progress/1.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="57487745ce450899f9f250d5ae5c092a682cd041">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.pnikosis-materialish-progress-1.0_65a6268d8a30edb35bde0704552b9df16fcb731d/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="1755aea240a39a036bd823c755cb4e2953df693a">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_65b9e16e3242882cb45e467c352ccb9a423dfbb3/classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="/Users/zengye/Liber/Liber/app/build/intermediates/exploded-aar/com.android.support/design/23.3.0/jars/classes.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="23.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/com.android.support-design-23.3.0_107a35cf8a2d6f4b0aa66fbcffe84797e12146e2/classes.dex" />
+    </item>
+
+</items>
