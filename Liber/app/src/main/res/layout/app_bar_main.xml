@@ -22,30 +22,26 @@
             app:popupTheme="@style/AppTheme.PopupOverlay" >
 
 
-            <FrameLayout
-                android:layout_width="60dp"
-                android:layout_height="wrap_content"
+
+
+            <Button
+                android:id="@+id/btn_log"
                 android:layout_gravity="right"
-                >
+                android:background="@drawable/shape"
+                android:textColor="#FFFFFF"
+                android:textSize="14sp"
+                android:layout_height="40dp"
+                android:layout_width="60dp" />
 
-                <Button
-                    android:id="@+id/btn_log"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="right"
-                    android:background="#80ffffff"
-                    android:textColor="#000000"
-                    android:textSize="11sp" />
-
-                <TextView
-                    android:text="     Login"
-                    android:layout_width="60dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity = "center"
-                    android:id="@+id/logView" />
+            <!--<TextView-->
+            <!--android:text="     Login"-->
+            <!--android:layout_width="60dp"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity = "center"-->
+            <!--android:id="@+id/logView" />-->
 
 
-            </FrameLayout>
+
 
 
 
@@ -57,8 +53,6 @@
 
 
     </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_main" />
 
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fabmenu"
@@ -94,5 +88,7 @@
             fab:fab_label="Add"
             fab:fab_size="mini" />
     </com.github.clans.fab.FloatingActionMenu>
+
+    <include layout="@layout/content_main" />
 
 </android.support.design.widget.CoordinatorLayout>

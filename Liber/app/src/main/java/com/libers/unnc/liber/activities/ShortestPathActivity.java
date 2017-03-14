@@ -32,6 +32,7 @@ import com.libers.unnc.liber.algorithms.Astar;
 
 
 
+
 public class ShortestPathActivity extends BaseActivity{
     
     private Context context;
@@ -40,7 +41,8 @@ public class ShortestPathActivity extends BaseActivity{
     private MapListAdapter mapListAdapter;
     static private int path[] = new int[255];
     static int count = 0;
-    
+
+    List <Book> guideBooks = new ArrayList<Book>();
     private int res[] = new int[] {R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor, R.drawable.floor,
     R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor, R.drawable.floor,
     R.drawable.floor,R.drawable.floor,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.floor,R.drawable.floor,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf, R.drawable.floor,R.drawable.floor, R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.floor,R.drawable.floor,
@@ -98,6 +100,53 @@ public class ShortestPathActivity extends BaseActivity{
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        ArrayList<Astar.Node> openList = new ArrayList<Astar.Node>();
+        ArrayList<Astar.Node> closeList = new ArrayList<Astar.Node>();
+        guideBooks = DataSupport.findAll(Book.class);
+        int size = guideBooks.size();
+        for(int i = 0; i < size; i++){
+            String isbn = guideBooks.get(i).getIsbn13();
+            String bookshlf = isbn.substring(11,12);
+            String level = isbn.substring(12, 13);
+            int bs = Integer.parseInt(bookshlf);
+            int front_end = Integer.parseInt(level) % 2;
+            int quotitent = bs/3 - 1;
+            int remainder = Math.round(bs%4);
+            int y, x = 0;
+            //if the lev % 2 is even, it located front;
+                if (remainder == 1) {
+                    y = 3;
+                    if(quotitent == 0){
+                        if(front_end == 0){
+                            x = 12;
+                        }else{
+                            x = 9;
+                        }
+                    }
+                } else if (remainder == 2) {
+                    y = 8;
+                    if(quotitent == 1){
+                         if(front_end == 0){
+                             x = 8;
+                         } else{
+                             x = 5;
+                         }
+                    }
+                } else {
+                    y = 13;
+                    if(quotitent == 2){
+                        if(front_end == 0){
+                            x = 4;
+                        } else{
+                            x = 1;
+                        }
+                    }
+                }
+
+            Astar.Node node = new Astar.Node(x, y);
+            openList.add(i, node);
+        }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shortest_path);
         
@@ -115,15 +164,15 @@ public class ShortestPathActivity extends BaseActivity{
         listView.setAdapter(mapListAdapter);
         
         List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
-        
+
         int numberOfNode = 3;
         Astar.Node Door = new Astar.Node(13,8);
         Astar.Node NodeA = new Astar.Node(9,3);
         Astar.Node NodeB = new Astar.Node(1,8);
         Astar.Node NodeC = new Astar.Node(5,13);
         
-        ArrayList<Astar.Node> openList = new ArrayList<Astar.Node>();
-        ArrayList<Astar.Node> closeList = new ArrayList<Astar.Node>();
+
+
         
         openList.add(0, NodeA);
         openList.add(1, NodeB);

@@ -4,6 +4,9 @@ package com.libers.unnc.liber.activities;
  * Created by zengye on 3/2/17.
  */
 
+import android.app.AlertDialog;
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
@@ -24,12 +27,14 @@ import com.libers.unnc.liber.model.bean.User;
 
 public class LoginActivity extends AppCompatActivity {
 
+    final Context context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
         final Button btnlogin = (Button) findViewById(R.id.btn_login);
+
         btnlogin.setOnClickListener(new View.OnClickListener() {
 
             @Override
@@ -38,12 +43,19 @@ public class LoginActivity extends AppCompatActivity {
                 EditText password = (EditText)findViewById(R.id.input_password);
                 String name = username.getText().toString();
                 String passW = password.getText().toString();
-                if(name.isEmpty()){
-                    Toast.makeText(LoginActivity.this, "Username Empty!!", Toast.LENGTH_SHORT).show();
-                }
+
                 List<User> users = DataSupport.where("username = ?", name).find(User.class);
                 if(users.size()== 0){
-                    Toast.makeText(LoginActivity.this, "Wrong username or password!", Toast.LENGTH_SHORT).show();
+                    AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(context);
+
+                    alertDialogBuilder.setTitle("Error")
+
+                            .setMessage("Wrong username or password!")
+
+                            .setPositiveButton("Confirm", null)
+
+                            .show();
+
                 }else{
                     String rigntPW = users.get(0).getPassword();
                     if(passW.equals(rigntPW)){
@@ -63,6 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         });
 
     }
+
 
 
 }

@@ -214,7 +214,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="d92705016891ee0897d6d57bfe18ac4975abb0b5">
+        sha1="e78d33764518ce8e5f96558a902d4d392595a6ab">
         <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run_65fd13c62d789ec985ba3ae48d5f2ca75688bbe6/classes.dex" />
     </item>
     <item
@@ -232,7 +232,7 @@
         jumboMode="true"
         optimize="true"
         revision="23.0.3"
-        sha1="1755aea240a39a036bd823c755cb4e2953df693a">
+        sha1="7082839aabaaeecf73406195a33b384f670bf0aa">
         <dex dex="/Users/zengye/Liber/Liber/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_65b9e16e3242882cb45e467c352ccb9a423dfbb3/classes.dex" />
     </item>
     <item
