@@ -102,7 +102,7 @@ public class SearchActivity extends BaseActivity {
         });
 
         // 初始化RecyclerView
-        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.fragment_search_book_recycler);
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.guidelist_recycler);
         manager = new LinearLayoutManager(this);
         adapter = new BookRecyclerAdapter(this);
         recyclerView.setLayoutManager(manager);

@@ -46,42 +46,14 @@
             android:layout_alignParentStart="true"
             android:background="@color/button_text_color"
             android:numColumns="17"/>
-        <!--
-                <ScrollView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true">
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical" >-->
-
-        <ListView
-            android:id="@+id/maplistview"
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/guidelist_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/listview_item_pressed"
             android:clipToPadding="false"
-            android:paddingBottom="10dp"
-            android:padding="8dp"/>
-        <!--            </LinearLayout>
-                </ScrollView>-->
-
+            android:padding="8dp" />
     </LinearLayout>
 
 </RelativeLayout>
 
-
-    <!--
-
-    <GridView
-    android:id="@+id/mapgridview"
-    android:layout_width="340dp"
-    android:layout_height="280dp"
-    android:layout_alignParentTop="true"
-    android:layout_alignParentLeft="true"
-    android:layout_alignParentStart="true"
-    android:background="@color/button_text_color"
-    android:numColumns="17"/>-->

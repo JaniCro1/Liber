@@ -1,6 +1,9 @@
 package com.libers.unnc.liber.activities;
 
 import android.os.Bundle;
+import android.support.v7.widget.DefaultItemAnimator;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 import android.content.Context;
 import android.support.v7.app.ActionBar;
@@ -26,19 +29,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.libers.unnc.liber.R;
+import com.libers.unnc.liber.adapters.BookRecyclerAdapter;
+import com.libers.unnc.liber.adapters.GuideListAdapter;
 import com.libers.unnc.liber.adapters.MapListAdapter;
+import com.libers.unnc.liber.app.MyApplication;
 import com.libers.unnc.liber.model.bean.Book;
 import com.libers.unnc.liber.algorithms.Astar;
 
 
 
 
-public class ShortestPathActivity extends BaseActivity{
-    
+public class ShortestPathActivity extends BaseActivity implements GuideListAdapter.OnClickInAdapter{
+
     private Context context;
     private GridView gridView;
-    private ListView listView;
-    private MapListAdapter mapListAdapter;
+
+
+
+    private RecyclerView recyclerView;
+    private LinearLayoutManager manager;
+    private GuideListAdapter adapter;
+
     static private int path[] = new int[255];
     static int count = 0;
 
@@ -57,7 +68,7 @@ public class ShortestPathActivity extends BaseActivity{
     R.drawable.floor,R.drawable.floor,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.floor,R.drawable.floor,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf, R.drawable.floor,R.drawable.floor, R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.bookshelf,R.drawable.floor,R.drawable.floor,
     R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor, R.drawable.floor,
     R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor,R.drawable.floor, R.drawable.floor, R.drawable.floor,};
-    
+
     public static void getPath(Astar.Node stNode, Astar.Node edNode) {
         final int[][] NODES = {
             { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 },
@@ -79,13 +90,13 @@ public class ShortestPathActivity extends BaseActivity{
         Astar.Node endNode = edNode;
         Astar.Node parent = new Astar().findPath(startNode, endNode);
         ArrayList<Astar.Node> arrayList = new ArrayList<Astar.Node>();
-        
+
         while (parent != null) {
             arrayList.add(new Astar.Node(parent.x, parent.y));
             parent = parent.parent;
         }
         System.out.println("\n");
-        
+
         for (int i = 0; i < NODES.length; i++) {
             for (int j = 0; j < NODES[0].length; j++) {
                 if (new Astar().exists(arrayList, i, j)) {
@@ -97,9 +108,19 @@ public class ShortestPathActivity extends BaseActivity{
             }
         }
     }
-    
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+        Bundle extras = getIntent().getExtras();
+        if(extras == null){
+            Toast.makeText(ShortestPathActivity.this, "Empty", Toast.LENGTH_SHORT).show();
+        }else{
+            String isbn1 = extras.getString("id");
+            Toast.makeText(ShortestPathActivity.this, isbn1, Toast.LENGTH_SHORT).show();
+        }
+
+
 
         ArrayList<Astar.Node> openList = new ArrayList<Astar.Node>();
         ArrayList<Astar.Node> closeList = new ArrayList<Astar.Node>();
@@ -149,20 +170,30 @@ public class ShortestPathActivity extends BaseActivity{
         }
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shortest_path);
-        
+
         context = this;
         gridView = (GridView) findViewById(R.id.mapgridview);
-        listView = (ListView) findViewById(R.id.maplistview);
-        
-        
-        /**
-         * need to read data from local database, litepal??
-         */
-        mapListAdapter = new MapListAdapter(context);
-        mapListAdapter.setData(DataSupport.order("id desc").find(Book.class));  //get data from localdatabase
-        mapListAdapter.notifyDataSetChanged();
-        listView.setAdapter(mapListAdapter);
-        
+
+
+
+        recyclerView = (RecyclerView) findViewById(R.id.guidelist_recycler);
+        manager = new LinearLayoutManager(this);
+        adapter = new GuideListAdapter(this);
+        recyclerView.setLayoutManager(manager);
+        recyclerView.setItemAnimator(new DefaultItemAnimator());
+        recyclerView.setAdapter(adapter);
+
+        List<Book> books = DataSupport.findAll(Book.class);
+
+        adapter.setData(books);
+        adapter.notifyDataSetChanged();
+
+
+
+
+
+
+
         List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
 
         int numberOfNode = 3;
@@ -170,20 +201,20 @@ public class ShortestPathActivity extends BaseActivity{
         Astar.Node NodeA = new Astar.Node(9,3);
         Astar.Node NodeB = new Astar.Node(1,8);
         Astar.Node NodeC = new Astar.Node(5,13);
-        
 
 
-        
+
+
         openList.add(0, NodeA);
         openList.add(1, NodeB);
         openList.add(2, NodeC);
-        
+
         closeList.add(0, Door);
         closeList.add(1, NodeA);
         closeList.add(2, NodeB);
         closeList.add(3, NodeC);
         closeList.add(numberOfNode+1, Door);
-        
+
         int[] distanceList = new int[numberOfNode+1];
         for(int c = 0; c<numberOfNode+1; c++)
         {
@@ -204,8 +235,8 @@ public class ShortestPathActivity extends BaseActivity{
             System.out.println(c);
             getPath(closeList.get(c),closeList.get(c+1));
         }
-        
-        
+
+
         for(int i=0;i<res.length;i++){
             int a = 0;
             int b = 0;
@@ -236,13 +267,13 @@ public class ShortestPathActivity extends BaseActivity{
                 data.add(map);
             }
         }
-        
-        
+
+
         final SimpleAdapter simpleAdapter = new SimpleAdapter(this, data,R.layout.item_grid,
                                                               new String[]{"imageView"}, new int[]{R.id.grid_item_image});
-        
+
         gridView.setAdapter(simpleAdapter);
-        
+
         /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
          @Override
          public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
@@ -250,15 +281,15 @@ public class ShortestPathActivity extends BaseActivity{
          simpleAdapter.notifyDataSetChanged();
          }
          });*/
-        
+
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayHomeAsUpEnabled(true);
         }
-        
+
         setTitle("Shortest path");
     }
-    
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -268,5 +299,10 @@ public class ShortestPathActivity extends BaseActivity{
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+    @Override
+    public void onClickInAdapter(String content) {
+        // you can fill the editText here
+        Toast.makeText(ShortestPathActivity.this, "FROM SHORTEST", Toast.LENGTH_SHORT).show();
     }
 }

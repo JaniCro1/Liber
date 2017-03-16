@@ -121,13 +121,40 @@ public class MyBookFragment extends Fragment implements AdapterView.OnItemClickL
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-//        Intent intent = new Intent(getActivity(), BookInfoActivity.class);
-//        intent.putExtra("id", (int) myBookAdapter.getItemId(position));
-//        startActivity(intent);
-        Intent intent = new Intent(getActivity(), BookInfoAddActivity.class);
-        intent.putExtra("ISBN",  myBookAdapter.getItemISBN(position));
-        getActivity().startActivity(intent);
 
+
+
+        Boolean isAdded = false;
+
+        List<Book> books = DataSupport.findAll(Book.class);
+        for (int i = 0; i < books.size(); i++) {
+            Book book_db = books.get(i);
+            Log.e("MyBOOKadd", "onItemClick: "+book_db.getIsbn13());
+
+            if ( book_db.getIsbn13().equals(myBookAdapter.getItemISBN(position))) {
+                isAdded = true;
+                Log.e("MyBOOKadd", "onItemClick: success find bokk");
+                break;
+            } else {
+                isAdded = false;
+            }
+        }
+
+        Log.e("MyBOOKadd", "onItemClick: "+isAdded );
+        Log.e("MyBOOKadd", "onItemClick: mybookadapter"+myBookAdapter.getItemISBN(position) );
+
+
+
+        if(isAdded){
+            Intent intent = new Intent(getActivity(), BookInfoActivity.class);
+            intent.putExtra("id", (int) myBookAdapter.getItemId(position));
+            getActivity().startActivity(intent);
+        }
+        else {
+            Intent intent = new Intent(getActivity(), BookInfoAddActivity.class);
+            intent.putExtra("ISBN", myBookAdapter.getItemISBN(position));
+            getActivity().startActivity(intent);
+        }
 
     }
 

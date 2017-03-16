@@ -70,4 +70,5 @@ dependencies {
 //    compile 'com.github.ybq:Android-SpinKit:1.0.4'
 
     testCompile 'junit:junit:4.12'
+    compile 'org.jetbrains:annotations-java5:15.0'
 }
