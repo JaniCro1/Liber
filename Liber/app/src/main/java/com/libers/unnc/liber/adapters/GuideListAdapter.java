@@ -79,6 +79,26 @@ public class GuideListAdapter extends RecyclerView.Adapter<GuideListViewHolder> 
         holder.bookAuthor.setText(list.get(position).getAuthor());
         holder.bookPublisher.setText(list.get(position).getPublisher());
 
+        String isbn = list.get(position).getIsbn13();
+        String bookshlf = isbn.substring(11,12);
+        String level = isbn.substring(12, 13);
+        int bs = Integer.parseInt(bookshlf);
+        int lev = Integer.parseInt(level);
+        if(bs == 0 ){
+            bs = 1;
+        }
+        if(lev == 0){
+            lev = 1;
+        }
+
+        holder.bookshelf.setText(bs+"");
+        holder.level.setText(lev+"");
+
+
+
+
+
+
         // 设置翻译者
         if (list.get(position).getTranslator().isEmpty()) {
             holder.bookDivider.setVisibility(View.GONE);
@@ -91,13 +111,12 @@ public class GuideListAdapter extends RecyclerView.Adapter<GuideListViewHolder> 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                    // 图书未添加，跳转到添加页面
-                Intent intent = new Intent(context, ShortestPathActivity.class);
-                intent.putExtra("id", list.get(position).getIsbn13());
-
-                context.startActivity(intent);
-
+                ShortestPathActivity.infor = list.get(position).getIsbn13();
+                ShortestPathActivity.mapChanged();
+//                Intent intent = new Intent(context, ShortestPathActivity.class);
+//                intent.putExtra("id", list.get(position).getIsbn13());
+//
+//                context.startActivity(intent);
 
                 //Toast.makeText(MyApplication.getContext(), list.get(position).getIsbn13(), Toast.LENGTH_SHORT).show();
 
@@ -127,6 +146,8 @@ class GuideListViewHolder extends RecyclerView.ViewHolder {
     TextView bookPublisher;
     TextView bookDivider;
     CardView cardView;
+    TextView bookshelf;
+    TextView level;
 
     public GuideListViewHolder(View itemView) {
         super(itemView);
@@ -137,6 +158,10 @@ class GuideListViewHolder extends RecyclerView.ViewHolder {
         bookPublisher = (TextView) itemView.findViewById(R.id.maplist_item_publisher);
         bookDivider = (TextView) itemView.findViewById(R.id.maplist_item_divider);
         cardView = (CardView) itemView.findViewById(R.id.maplist_item);
+        bookshelf = (TextView) itemView.findViewById(R.id.numShelf);
+        level = (TextView)itemView.findViewById(R.id.numLevel);
+
+
     }
 
 

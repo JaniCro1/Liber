@@ -36,19 +36,23 @@ import com.libers.unnc.liber.app.MyApplication;
 import com.libers.unnc.liber.model.bean.Book;
 import com.libers.unnc.liber.algorithms.Astar;
 
-
+import static com.libers.unnc.liber.app.MyApplication.getContext;
 
 
 public class ShortestPathActivity extends BaseActivity implements GuideListAdapter.OnClickInAdapter{
 
     private Context context;
-    private GridView gridView;
+    private static GridView gridView;
 
+   public  static String infor = "";
 
+    static List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
 
     private RecyclerView recyclerView;
     private LinearLayoutManager manager;
     private GuideListAdapter adapter;
+
+    public static SimpleAdapter simpleAdapter;
 
     static private int path[] = new int[255];
     static int count = 0;
@@ -112,13 +116,13 @@ public class ShortestPathActivity extends BaseActivity implements GuideListAdapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
 
-        Bundle extras = getIntent().getExtras();
-        if(extras == null){
-            Toast.makeText(ShortestPathActivity.this, "Empty", Toast.LENGTH_SHORT).show();
-        }else{
-            String isbn1 = extras.getString("id");
-            Toast.makeText(ShortestPathActivity.this, isbn1, Toast.LENGTH_SHORT).show();
-        }
+//        Bundle extras = getIntent().getExtras();
+//        if(extras == null){
+//            Toast.makeText(ShortestPathActivity.this, "Empty", Toast.LENGTH_SHORT).show();
+//        }else{
+//            String isbn1 = extras.getString("id");
+//            Toast.makeText(ShortestPathActivity.this, isbn1, Toast.LENGTH_SHORT).show();
+//        }
 
 
 
@@ -187,14 +191,6 @@ public class ShortestPathActivity extends BaseActivity implements GuideListAdapt
 
         adapter.setData(books);
         adapter.notifyDataSetChanged();
-
-
-
-
-
-
-
-        List<Map<String, Object>> data = new ArrayList<Map<String,Object>>();
 
         int numberOfNode = 3;
         Astar.Node Door = new Astar.Node(13,8);
@@ -269,18 +265,10 @@ public class ShortestPathActivity extends BaseActivity implements GuideListAdapt
         }
 
 
-        final SimpleAdapter simpleAdapter = new SimpleAdapter(this, data,R.layout.item_grid,
-                                                              new String[]{"imageView"}, new int[]{R.id.grid_item_image});
+        simpleAdapter = new SimpleAdapter(this, data,R.layout.item_grid,
+                new String[]{"imageView"}, new int[]{R.id.grid_item_image});
 
         gridView.setAdapter(simpleAdapter);
-
-        /*gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-         @Override
-         public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-         simpleAdapter.setSeclection(position);
-         simpleAdapter.notifyDataSetChanged();
-         }
-         });*/
 
         ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
@@ -305,4 +293,23 @@ public class ShortestPathActivity extends BaseActivity implements GuideListAdapt
         // you can fill the editText here
         Toast.makeText(ShortestPathActivity.this, "FROM SHORTEST", Toast.LENGTH_SHORT).show();
     }
+
+    public static void mapChanged(){
+       String bookShelf= infor.substring(12, 13);
+
+        int bs = Integer.parseInt(bookShelf);
+
+
+        Map<String,Object> test = new HashMap<String, Object>();
+        test.put("imageView", R.drawable.door);
+        data.set(8, test);
+
+        simpleAdapter.notifyDataSetChanged();
+
+        //Toast.makeText(getContext(), infor, Toast.LENGTH_SHORT).show();
+
+
+    }
+
+
 }
